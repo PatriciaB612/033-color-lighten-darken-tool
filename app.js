@@ -105,5 +105,9 @@ const reset = () => {
   slider.value = 0
   sliderText.textContent = '0%'
   alteredColorText.textContent = `Altered Color ${hexInput.value}`
-  alteredColor.style.backgroundColor = '#ecebf3'
+  alteredColor.style.backgroundColor = `#${hexInput.value}`
+
+  if (!hexInput.value.match(/#/)) {
+    alteredColorText.textContent = `Altered Color #${hexInput.value}`
+  }
 }
